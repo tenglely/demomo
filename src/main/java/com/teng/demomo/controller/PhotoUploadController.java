@@ -45,7 +45,7 @@ public class PhotoUploadController {
         ImgInfo imgInfo = new ImgInfo();
         imgInfo.setError(0);
         imgInfo.setUrl(values);
-
+        System.out.println("成功");
         System.out.println(imgInfo.toString());
         return imgInfo;
     }
