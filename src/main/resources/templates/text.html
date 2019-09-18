@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/mycss.css">
+    <script type="text/javascript" src="/js/myjs.js"></script>
+</head>
+<body>
+            <!--导航栏-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">only博客</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/article.html">文章</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">关注</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">我的</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--填写文章标题-->
+            <div class="input-group mb-3">
+                <input id="title" class="form-control col-md-12" type="text " name="title" placeholder="请输入文章标题">
+            </div>
+
+            <!--编辑框-->
+            <div id="div1" class="toolbar col-md-12" style="background-color: #fffae7">
+            </div>
+            <div style="padding: 5px 0; color: #ccc;">&nbsp;&nbsp;请输入文章内容</div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div id="div2" class="text" >
+                    </div>
+                </div>
+                <div class="col-md-6 tt1"  style="border: 1px solid #ccc;">
+                    <div id="text1"  style="overflow-y:auto;width:780px; height:598px;">
+                    </div>
+                </div>
+            </div>
+
+            <!--文章分类-->
+            <br>
+            <div class="c1">
+            <div class="row">
+                <div class="col-md-2 col-sm-4" >
+                    <p class="p1">文章标签：</p>
+                </div>
+                <div class="col-md-6 col-sm-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio"  name="articleSpan" value="学习" checked>
+                    <label class="form-check-label">
+                        学习
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="articleSpan" value="兴趣爱好" >
+                    <label class="form-check-label">
+                        兴趣爱好
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="articleSpan" value="生活" >
+                    <label class="form-check-label">
+                        生活
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="articleSpan" value="其他">
+                    <label class="form-check-label">
+                        其他
+                    </label>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2 col-sm-4">
+                    <p class="p1">个人分类：</p>
+                </div>
+                <div class="col-md-4 col-sm-8">
+                    <input id="person" type="text" name="personSpan" class="form-control" placeholder="填写你的个人分类">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2 col-sm-4" >
+                    <p class="p1">文章类型：</p>
+                </div>
+                <div class="col-md-4 col-sm-8">
+                    <select id="articleType" class="form-control col-md-3">
+                        <option value="原创">原创</option>
+                        <option value="转载">转载</option>
+                        <option value="翻译">翻译</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2 col-sm-4" >
+                    <p class="p1">私密文章：</p>
+                </div>
+                <div class="col-md-4 col-sm-8">
+                    <select name="open" class="form-control col-md-3">
+                        <option value="公开">公开</option>
+                        <option value="私密">私密</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6 col-sm-10 b1">
+                    <button type="button" class="btn btn-outline-danger" onclick="checkForm()">发布文章</button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="btn btn-outline-secondary" href="/user/article.html">返回</a>
+                </div>
+            </div>
+                <br><br>
+            </div>
+<!-- 修改.js目录位置 -->
+<script type="text/javascript" src="/js/wangEditor.min.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#div1', '#div2') // 两个参数也可以传入 elem 对象，class 选择器
+    // editor.customConfig.uploadImgShowBase64 = true // 使用 base64 保存图片
+    // 配置服务器端地址
+    editor.customConfig.uploadImgServer = '/user/upload'
+    // 将图片大小限制为 3M
+    editor.customConfig.uploadImgMaxSize = 5 * 1024 * 1024;
+    // 自定义上传参数
+    editor.customConfig.uploadFileName = 'file'
+    editor.customConfig.uploadImgHooks = {
+        customInsert : function(insertImg, result, editor) {
+            var url = result.url
+            insertImg(url)
+        }
+    }
+    var $text1 = $('#text1')
+    editor.customConfig.onchange = function (html) {
+        // 监控变化，同步更新到 textarea
+        $text1.empty()
+        $text1.append(html)
+    }
+    // 必须放到有关于编辑器设置前面
+    editor.create()
+
+</script>
+
+</body>
+</html>

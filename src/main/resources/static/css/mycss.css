@@ -1,0 +1,120 @@
+.container{
+    width:1200px;
+    margin:auto;
+    height:auto;
+}
+.d1{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+.d2{
+    border: 1px solid #cccccc;
+    width: 100%;
+    margin-bottom:1px;
+    padding-left: 5px;
+    background-color: #fff;
+}
+.toolbar {
+    border: 1px solid #ccc;
+}
+.text {
+    border: 1px solid #ccc;
+    height: 600px;
+    width: 100%;
+}
+.w-e-toolbar{
+    flex-wrap:wrap;
+}
+.p1{
+    text-align: right;
+}
+.b1{
+    text-align: center;
+}
+.c1{
+    width:1200px;
+    height: auto;
+}
+.a1{
+    padding-top: 15px;
+}
+.a2{
+    padding: 10px;
+}
+.a3{
+    margin-left: 10px;
+    height: 600px;
+}
+.a4{
+    color: black;
+}
+.a4:hover{
+    color: red;
+    text-decoration:none;
+}
+.a5{
+    color: #ADADAD;
+}
+.a5:hover{
+    color: red;
+    text-decoration:none;
+}
+.t1{
+    border: 1px solid #cccccc;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+.t1 td{
+    padding-left: 5px;
+}
+.t1 img{
+    height: 100px;
+    width: auto;
+}
+.t2{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.m1{
+    margin-left: 10px;
+}
+.f1{
+    font-size: 18px;
+}
+/*媒体查询：注意and后面空格的添加*/
+/*iphone: w < 768px*/
+@media screen and (max-width: 576px){
+    .container{
+        width:auto;
+    }
+    .c1{
+        width:100%;
+        height: auto;
+    }
+    .d1{
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    .d1 input{
+        font-size: 25px;
+    }
+    .toolbar {
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+    .text {
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+    .tt1{
+        display: none;
+    }
+    .p1{
+        text-align: left;
+    }
+    .b1{
+        text-align: left;
+    }
+}
+
